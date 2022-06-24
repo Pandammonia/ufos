@@ -110,6 +110,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'accounts:login'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join (BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
