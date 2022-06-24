@@ -103,12 +103,21 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': '',
-        'USER': 'postgres',
+        'USER': '',
         'PASSWORD': '',
         'HOST': '',
-        'PORT': '',
+        'PORT': '5342',
     }
 }
+
+SECRET_KEY = 'django-insecure-ty8$c8=rv6kipt$6(w((h(7&x$k!pycylkjw7zp3^e0=*uv00z'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = []
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -139,7 +148,6 @@ EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-try:
-   from .localsettings import *
-except ImportError:
-    pass
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
